@@ -1,0 +1,19 @@
+{
+	"name": "hxgf/aux",
+  "homepage": "https://github.com/hxgf/aux",
+  "description": "A collection of utility functions to help do things faster with PHP.",
+	"type": "library",
+  "license": "MIT",
+	"authors": [
+		{
+      "name": "Jonathan Youngblood",
+      "email": "jy@hxgf.io"
+		}
+	],
+	"keywords": ["utilities"],
+	"autoload": {
+		"psr-4": {
+			"Aux\\": ["src/"]
+		}
+	}
+}
