@@ -1,4 +1,4 @@
-# Aux Utilities
+# X-Utilities
 
 ### A collection of utility functions to help do things faster with PHP.
 
@@ -6,10 +6,10 @@
 # Installation
 Easy install with composer:
 ```
-composer require hxgf/aux:0.1.0@dev
+composer require hxgf/x-utilities:0.1.0@dev
 ```
 ```php
-use Aux\x;
+use XUtilities\x;
 require __DIR__ . '/vendor/autoload.php';
 ```
 
