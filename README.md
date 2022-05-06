@@ -67,13 +67,13 @@ The opposite of `nl2br()`, replaces `<br />` (and `<br>`) html tags with newline
 echo x::br2nl('This is a <br /> multi-line <br /> string!'); // This is a \n multi-line \n string!
 ```
 
-## x::array_encode()
+## x::array_encode($array)
 Turns an array of strings into a single string, separated by a vertical bar (`|`) character.
 ```php
 echo x::array_encode(['Peter', 'Paul', 'Ringo', 'George']); // Peter|Paul|Ringo|George
 ```
 
-## x::array_decode()
+## x::array_decode($string)
 Turns a string separated by a vertical bar (`|`) character into an array of strings.
 ```php
 $people = x::array_decode('Peter|Paul|Ringo|George');
