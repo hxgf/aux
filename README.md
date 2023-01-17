@@ -88,7 +88,7 @@ print_r($people);
 
 
 ## x::console_log($input, $parameters)
-Prints an array, object or string in a stylized DOM container. Input type is automatically detected, and optional parameters can be used to customize the style of the container.
+Prints an array, object, or string in a stylized DOM container. Input type is automatically detected, and optional parameters can be used to customize the style of the container.
 
 Typical usage:
 ```php
