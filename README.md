@@ -142,7 +142,7 @@ x::file_write(
 
 
 ## x::error_log($input, $parameters)
-Abstraction for the native `error_log()` function, appends a timestamp with a given string, array, or object to an `error_log` file. Input type is automatically detected and converted to plain text.
+Abstraction for the native PHP [error_log()](https://www.php.net/manual/en/function.error-log.php) function, appends a timestamp with a given string, array, or object to an `error_log` file. Input type is automatically detected and converted to plain text.
 ```php
 x::error_log('Something bad happened.');
 ```
