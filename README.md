@@ -18,7 +18,7 @@ require __DIR__ . '/vendor/autoload.php';
 # Usage
 
 ## x::email_send($parameters)
-Sends a plain text or html email using PHP mail().
+Sends a plain text or html email using the native PHP [mail()](https://www.php.net/manual/en/function.mail.php) function.
 ```php
 x::email_send([
   'to' => 'recipient@domain.com',
