@@ -111,7 +111,7 @@ x::console_log(['example' => 'array'], [
 ```
 
 ## x::dd($input, $parameters)
-Same as `console_log()`, but with with a `die()` function called afterward. The same parameters are available for styling the container. Yes, it's like Laravel's [dd()](https://laravel.com/docs/9.x/collections#method-dd) function. 
+Same as `console_log()`, but with with a `die()` function called afterward. The same parameters are available for styling the container. Yes, it's like Laravel's [dd()](https://laravel.com/docs/9.x/collections#method-dd) method. 
 ```php
 x::dd(['example' => 'array']);
 ```
