@@ -99,7 +99,7 @@ With optional parameters:
 ```php
 x::console_log(['example' => 'array'], [
   'format' => false, // removes all container formatting
-  'style' => [ // define custom styles for container formatting
+  'style' => [ // defines custom styles for container formatting
     'font-size' => '16px',
     'background' => 'blue',
     'color' => 'yellow',
@@ -111,7 +111,7 @@ x::console_log(['example' => 'array'], [
 ```
 
 ## x::dd($input, $parameters)
-Same as `console_log()`, but with with a `die()` function called afterward. The same parameters are available for styling the container.
+Same as `console_log()`, but with with a `die()` function called afterward. The same parameters are available for styling the container. Yes, it's like Laravel's [dd()](https://laravel.com/docs/9.x/collections#method-dd) function. 
 ```php
 x::dd(['example' => 'array']);
 ```
