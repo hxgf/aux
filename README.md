@@ -118,7 +118,7 @@ x::dd(['example' => 'array']);
 
 
 ## x::file_write($input, $target_filename, $parameters)
-Appends a string, array, or object to a given file. Input type is automatically detected and converted to plain text. Optional parameters can be used to customize [fopen mode](https://www.php.net/manual/en/function.fopen.php) and newline behavior.
+Appends a string, array, or object to a given file. Input type is automatically detected and converted to plain text. Optional parameters can be used to customize [fopen() mode](https://www.php.net/manual/en/function.fopen.php) and newline behavior.
 ```php
 x::file_write('A string to append to a file', 'data.txt');
 ```
