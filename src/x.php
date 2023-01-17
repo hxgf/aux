@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package    X-Utilities
+ * @package    VPHP - X-Utilities
  * @version    1.2.0
  * @author     Jonathan Youngblood <jy@hxgf.io>
  * @license    https://github.com/hxgf/x-utilities/blob/master/LICENSE.md (MIT License)
