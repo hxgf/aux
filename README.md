@@ -98,7 +98,7 @@ x::console_log(['example' => 'array']);
 With optional parameters:
 ```php
 x::console_log(['example' => 'array'], [
-  'format' => false, // disables container formatting
+  'format' => false, // removes all container formatting
   'style' => [ // define custom styles for container formatting
     'font-size' => '16px',
     'background' => 'blue',
