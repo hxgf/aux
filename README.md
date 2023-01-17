@@ -111,14 +111,14 @@ x::console_log(['example' => 'array'], [
 ```
 
 ## x::dd($input, $parameters)
-Same as `console_log()`, but with with a `die()` function called afterward. The same parameters are available for styling the container. Yes, it's like Laravel's [dd()](https://laravel.com/docs/9.x/collections#method-dd) method. 
+Same as `console_log()`, but with with a `die()` function called afterward. The same parameters are available for styling the container. Yes, it's kinda like Laravel's [dd()](https://laravel.com/docs/9.x/collections#method-dd) method. 
 ```php
 x::dd(['example' => 'array']);
 ```
 
 
 ## x::file_write($input, $target_filename, $parameters)
-Appends a string, array, or object to a given file. Input type is automatically detected and converted to plain text. Optional parameters can be used to customize fopen mode and newline behavior.
+Appends a string, array, or object to a given file. Input type is automatically detected and converted to plain text. Optional parameters can be used to customize [fopen mode](https://www.php.net/manual/en/function.fopen.php) and newline behavior.
 ```php
 x::file_write('A string to append to a file', 'data.txt');
 ```
