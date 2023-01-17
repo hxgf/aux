@@ -1,4 +1,4 @@
-# VPHP X-Utilities
+# VPHP - X-Utilities
 
 ### A collection of standalone utility functions to help do things faster with PHP.
 
