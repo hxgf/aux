@@ -1,6 +1,6 @@
-# X-Utilities
+# VPHP X-Utilities
 
-### A collection of utility functions to help do things faster with PHP.
+### A collection of standalone utility functions to help do things faster with PHP.
 
 
 # Installation
@@ -9,7 +9,7 @@ Easy install with composer:
 composer require hxgf/x-utilities
 ```
 ```php
-use XUtilities\x;
+use VPHP\x;
 require __DIR__ . '/vendor/autoload.php';
 ```
 
@@ -46,36 +46,103 @@ echo x::client_ip();
 ## x::url_slug($string)
 Returns a lowercase URL-safe version of a given string, substituting `-` for spaces and punctuation.
 ```php
-echo x::url_slug('John User Name'); // john-user-name
+echo x::url_slug('John User Name'); 
+// john-user-name
 ```
 
 ## x::url_strip($url)
 Removes the protocol and trailing slashes from a given url, returning only the domain name.
 ```php
-echo x::url_strip('https://example.com/'); // example.com
+echo x::url_strip('https://example.com/'); 
+// example.com
 ```
 
 ## x::url_validate($url)
 Returns a valid URL, adding `http://` if needed.
 ```php
-echo x::url_strip('example.com'); // http://example.com
+echo x::url_validate('example.com'); 
+// http://example.com
 ```
 
 ## x::br2nl($string)
 The opposite of `nl2br()`, replaces `<br />` (and `<br>`) html tags with newline (`\n`) character.
 ```php
-echo x::br2nl('This is a <br /> multi-line <br /> string!'); // This is a \n multi-line \n string!
+echo x::br2nl('This is a <br /> multi-line <br /> string!'); 
+// This is a \n multi-line \n string!
 ```
 
 ## x::array_encode($array)
 Turns an array of strings into a single string, separated by a vertical bar (`|`) character.
 ```php
-echo x::array_encode(['Peter', 'Paul', 'Ringo', 'George']); // Peter|Paul|Ringo|George
+echo x::array_encode(['Peter', 'Paul', 'Ringo', 'George']); 
+// Peter|Paul|Ringo|George
 ```
 
 ## x::array_decode($string)
 Turns a string separated by a vertical bar (`|`) character into an array of strings.
 ```php
 $people = x::array_decode('Peter|Paul|Ringo|George');
-print_r($people); // ['Peter', 'Paul', 'Ringo', 'George']
+print_r($people); 
+// ['Peter', 'Paul', 'Ringo', 'George']
+```
+
+
+## x::console_log($input, $parameters)
+Prints an array, object or string in a stylized DOM container. Input type is automatically detected, and optional parameters can be used to customize the style of the container.
+
+Typical usage:
+```php
+x::console_log(['example' => 'array']);
+```
+
+With optional parameters:
+```php
+x::console_log(['example' => 'array'], [
+  'format' => false, // removes all container formatting
+  'style' => [ // define custom styles for container formatting
+    'font-size' => '16px',
+    'background' => 'blue',
+    'color' => 'yellow',
+    'padding' => '2.5rem',
+    'line-height' => '200%',
+    'custom' => 'font-style: italic'
+  ]
+]);
+```
+
+## x::dd($input, $parameters)
+Same as `console_log()`, but with with a `die()` function called afterward. The same parameters are available for styling the container.
+```php
+x::dd(['example' => 'array']);
+```
+
+
+## x::file_write($input, $target_filename, $parameters)
+Appends a string, array, or object to a given file. Input type is automatically detected and converted to plain text. Optional parameters can be used to customize fopen mode and newline behavior.
+```php
+x::file_write('A string to append to a file', 'data.txt');
+```
+
+Using custom parameters:
+```php
+x::file_write(
+  ['array_example' => 'An array to append to a file'], 
+  'data.txt', 
+  [
+    'mode' => 'w+', // define PHP fopen mode, default is 'a'
+    'line_beginning' => "\n- ", // prepend to beginning of input
+    'line_ending' => "", // append end of input, default is PHP_EOL
+  ]
+);
+```
+
+
+
+
+
+
+## x::error_log($input, $parameters)
+Abstraction for the native `error_log()` function, appends a timestamp with a given string, array, or object to an `error_log` file. Input type is automatically detected and converted to plain text.
+```php
+x::error_log('Something bad happened.');
 ```
