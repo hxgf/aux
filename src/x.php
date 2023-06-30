@@ -2,7 +2,7 @@
 
 /**
  * @package    VPHP - X-Utilities
- * @version    1.2.0
+ * @version    1.2.1
  * @author     Jonathan Youngblood <jy@hxgf.io>
  * @license    https://github.com/hxgf/x-utilities/blob/master/LICENSE.md (MIT License)
  * @source     https://github.com/hxgf/x-utilities
@@ -95,6 +95,7 @@ class x {
 			}else{
 				$message = $input['message'];
 			}
+      $headers = '';
 			if (isset($input['from'])){
 				$headers 	.= "From: " . $input['from'] . "\r\n";	
 			}		
