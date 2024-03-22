@@ -6,7 +6,7 @@
 # Installation
 Easy install with composer:
 ```
-composer require hxgf/x-utilities
+composer require jyoungblood/x-utilities
 ```
 ```php
 use VPHP\x;

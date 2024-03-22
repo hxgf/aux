@@ -4,8 +4,8 @@
  * @package    VPHP - X-Utilities
  * @version    1.2.1
  * @author     Jonathan Youngblood <jy@hxgf.io>
- * @license    https://github.com/hxgf/x-utilities/blob/master/LICENSE.md (MIT License)
- * @source     https://github.com/hxgf/x-utilities
+ * @license    https://github.com/jyoungblood/x-utilities/blob/master/LICENSE.md (MIT License)
+ * @source     https://github.com/jyoungblood/x-utilities
  */
 
 namespace VPHP;

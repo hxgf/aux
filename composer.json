@@ -1,6 +1,6 @@
 {
-	"name": "hxgf/x-utilities",
-  "homepage": "https://github.com/hxgf/x-utilities",
+	"name": "jyoungblood/x-utilities",
+  "homepage": "https://github.com/jyoungblood/x-utilities",
   "description": "A collection of utility functions to help do things faster with PHP.",
 	"type": "library",
   "license": "MIT",
