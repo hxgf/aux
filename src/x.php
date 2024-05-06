@@ -2,10 +2,10 @@
 
 /**
  * @package    VPHP - X-Utilities
- * @version    1.2.1
+ * @version    1.2.2
  * @author     Jonathan Youngblood <jy@hxgf.io>
- * @license    https://github.com/jyoungblood/x-utilities/blob/master/LICENSE.md (MIT License)
- * @source     https://github.com/jyoungblood/x-utilities
+ * @license    https://github.com/hxgf/x-utilities/blob/master/LICENSE.md (MIT License)
+ * @source     https://github.com/hxgf/x-utilities
  */
 
 namespace VPHP;
@@ -131,30 +131,58 @@ class x {
 
 	// return string as url-safe slug
 	public static function url_slug($string){
-		// unicode-compatible chars only (i think)
-		return strtolower(preg_replace('#[^\pL\pN./-]+#', "-", $string)); 
+    return rtrim(
+      strtolower(
+        preg_replace('#([\-\.\?])\\1+#','$1',
+          preg_replace('#[^\pL\pN./-]+#',"-",
+            str_replace("/",'-',trim(str_replace('"','',str_replace("'",'',str_replace(".",'',$string)))))
+          )
+        )
+      )
+    , '-');
 	}
 
 	// return just the domain of a given url (remove "http://","https://","www.")
 	public static function url_strip($input){
 		if (!preg_match('#^http(s)?://#', $input)) {
 	    $input = 'http://' . $input;
-		}	
+		}
 		$url_parts = parse_url($input);
-		$domain = str_replace('/','',preg_replace('/^www\./', '', $url_parts['host']));
+    $domain = str_replace('/','',preg_replace('/^www\./', '', $url_parts['host']));
 		return $domain;
 	}
 
 	// add http to url, if needed
-	public static function url_validate($url){
-		if (!preg_match('#^http(s)?://#', $url)) {
-	    $o = 'http://' . $url;
-		}
-		else{
-			$o = $url;
-		}
-		return $o;
-	}
+  public static function url_validate($url, $protocol = false){
+    $o = null;
+    if (isset($url) && $url != '' && strpos($url, '.') !== false){
+      $url = trim($url);
+      if (!preg_match('#^http(s)?://#', $url)) {
+        $o = '';
+        if ($protocol){
+          $o .= $protocol;
+        }else{
+          $o .= 'https://';
+        }
+        if (strpos($url, '//') !== false){
+          $urlp = explode('//', $url);
+          $url = $urlp[1];
+        }
+        $o .= $url;
+      }
+      else{
+        $o = '';
+        if ($protocol){
+          $urlp = explode('//', $url);
+          $o =  $protocol . $urlp[1];
+        }else{
+          $o = $url;
+        }
+      }
+    }
+    return $o;
+  }
+
 
 	// replace "<br />" with "\n" (the opposite of nl2br)
 	public static function br2nl($string) {
