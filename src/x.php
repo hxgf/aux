@@ -135,7 +135,7 @@ class x {
       strtolower(
         preg_replace('#([\-\.\?])\\1+#','$1',
           preg_replace('#[^\pL\pN./-]+#',"-",
-            str_replace("/",'-',trim(str_replace('"','',str_replace("'",'',str_replace(".",'',$string)))))
+            str_replace("/",'-',trim(str_replace('"','',str_replace("'",'',$string))))
           )
         )
       )
