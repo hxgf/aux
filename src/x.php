@@ -31,7 +31,7 @@ class x {
       $message_html = $input['message'];					
 			$message_text = strip_tags(x::br2nl($message_html));	
 		}
-		if (isset($GLOBALS['settings']['mailgun']['api_key'])){
+		if (isset($_ENV['MAILGUN_API_KEY'])){
 			$message = array(
 				'from' => $input['from'],
 				'to' => $input['to'],
@@ -66,9 +66,9 @@ class x {
 			}
 			if (isset($input['to']) && !isset($input['preview']) && !isset($input['debug'])){
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://api.mailgun.net/v3/".$GLOBALS['settings']['mailgun']['domain']."/messages");
+        curl_setopt($ch, CURLOPT_URL, "https://api.mailgun.net/v3/".$_ENV['DOMAIN']."/messages");
         curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        curl_setopt($ch, CURLOPT_USERPWD, "api:".$GLOBALS['settings']['mailgun']['api_key']."");
+        curl_setopt($ch, CURLOPT_USERPWD, "api:".$_ENV['MAILGUN_API_KEY']."");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);

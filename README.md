@@ -33,8 +33,8 @@ x::email_send([
 ```
 Messages can be sent using the Mailgun API if Mailgun credentials are available in a global settings array like this:
 ```php
-$GLOBALS['settings']['mailgun']['api_key'] = 'key-f453654gg65sd6234r6rw5df6544e';
-$GLOBALS['settings']['mailgun']['domain'] = 'notifications.example.com';
+$_ENV['MAILGUN_API_KEY'] = 'key-f453654gg65sd6234r6rw5df6544e';
+$_ENV['MAILGUN_DOMAIN'] = 'notifications.example.com';
 ```
 
 ## x::client_ip()
