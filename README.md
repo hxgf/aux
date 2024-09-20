@@ -31,11 +31,17 @@ x::email_send([
   'message' => 'Right now...<br /><br /><br /><b><u>RIGHT NOW</u></b>'
 ]);
 ```
-Messages can be sent using the Mailgun API if Mailgun credentials are available in a global settings array like this:
+Messages can be sent using the Mailgun API if Mailgun credentials are available as environment variables like this:
 ```php
 $_ENV['MAILGUN_API_KEY'] = 'key-f453654gg65sd6234r6rw5df6544e';
 $_ENV['MAILGUN_DOMAIN'] = 'notifications.example.com';
 ```
+or in your project's `.env` file:
+```
+MAILGUN_API_KEY="key-f453654gg65sd6234r6rw5df6544e"
+MAILGUN_DOMAIN="notifications.example.com"
+```
+
 
 ## x::client_ip()
 Returns the address of the computer making the current request.
